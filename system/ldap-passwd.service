@@ -1,0 +1,13 @@
+[Unit]
+Description=LDAP Authentication against *nix password file
+After=syslog.target network.target rpcbind.service
+
+[Service]
+User=nobody
+Group=shadow
+#Environment=
+Restart=Always
+ExecStart=/usr/bin/nodejs /usr/local/lib/ldap-passwd/index.js
+
+[Install]
+WantedBy=multi-user.target

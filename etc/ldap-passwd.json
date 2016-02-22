@@ -1,0 +1,5 @@
+{
+    "port": 1389,
+    "org": "o=example, o=com",
+    "ldapCredentials": "secret"
+    }

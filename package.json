@@ -1,0 +1,24 @@
+{
+    "name": "ldap-passwd",
+    "version": "0.1.0",
+    "dependencies": {
+        "fs": "*",
+        "nconf": "*",
+        "ldapjs": "*",
+        "passwd-linux": "*",
+        },
+    "description": "LDAP Authentication against *nix passwd/shadow files",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+        },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/whtc/ldap-passwd.git"
+        },
+    "author": "Hugh T. Ranalli",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/whtc/ldap-passwd/issues"
+        }
+}
