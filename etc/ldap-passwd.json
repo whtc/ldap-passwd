@@ -1,5 +1,9 @@
 {
+    "debug": false,
+    "interface" : "127.0.0.1",
     "port": 1389,
     "org": "o=example, o=com",
+    "orgUnit" : "ou=Users",
+    "ldapUser" : "ldapadmin",
     "ldapCredentials": "secret"
     }

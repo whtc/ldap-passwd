@@ -17,9 +17,7 @@ nconf.defaults(
         'org': 'o=example, o=com',
         'orgUnit': 'ou=Users',
         'ldapUser': 'ldapadmin',
-        'ldapCredentials': 'secret',
-        'processUser': 'nobody',
-        'processGroup': 'shadow',
+        'ldapCredentials': 'secret'
         }
     );
 
