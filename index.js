@@ -45,7 +45,7 @@ function authorize(req, res, next) {
         }
 
     if (
-        (req.type != 'BindRequest' || req.type != 'SearchRequest') & 
+        (req.type != 'BindRequest' && req.type != 'SearchRequest') && 
         !req.connection.ldap.bindDN.equals(LDAP_USER_DN)
         ) {
             return next(new ldap.InsufficientAccessRightsError());
