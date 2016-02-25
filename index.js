@@ -74,6 +74,11 @@ function loadPasswdFile(req, res, next) {
                 if (!record || !record.length) {
                     continue;
                     }
+                
+                name = record[4].split(",")[0];
+                if (!name || !name.length) {
+                    name = "";
+                    }
 
                 req.users[record[0]] = {
                     dn: 'cn=' + record[0] + ', ' + ORG_DN,
@@ -83,6 +88,8 @@ function loadPasswdFile(req, res, next) {
                         uid: record[2],
                         gid: record[3],
                         description: record[4],
+                        name: name,
+                        displayName: name,
                         homedirectory: record[5],
                         shell: record[6] || '',
                         objectclass: 'unixUser'
@@ -160,6 +167,7 @@ server.search(
     function(req, res, next) {  
         if (nconf.get('debug')) {
             console.log('SEARCH CALLED on: ' + JSON.stringify(req.dn));
+            console.log('FILTER: ' + JSON.stringify(req.filter));
             }
         
         Object.keys(req.users).forEach(
@@ -335,6 +343,9 @@ server.listen(
     nconf.get('interface'), 
     function() {
         console.log('/etc/passwd LDAP server up at: %s', server.url);
+        if (nconf.get('debug')) {
+            console.log('Debug logging enabled.');   
+            }
         }
     );
 
