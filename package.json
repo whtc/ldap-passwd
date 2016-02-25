@@ -5,7 +5,7 @@
         "fs": "*",
         "nconf": "*",
         "ldapjs": "*",
-        "passwd-linux": "*",
+        "passwd-linux": "*"
         },
     "description": "LDAP Authentication against *nix passwd/shadow files",
     "main": "index.js",
