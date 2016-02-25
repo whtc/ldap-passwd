@@ -7,7 +7,7 @@ User=nobody
 Group=shadow
 #Environment=
 Restart=Always
-ExecStart=/usr/bin/nodejs /usr/local/lib/ldap-passwd/index.js
+ExecStart=/usr/bin/nodejs /usr/local/lib/node_modules/ldap-passwd/index.js
 
 [Install]
 WantedBy=multi-user.target
