@@ -137,6 +137,7 @@ server.bind(
                 "use strict";
                 if (error) {
                     console.log("AUTH ERROR for " + login + ": " + error);
+                    return next(new ldap.InvalidCredentialsError());
                     } 
                 else {
                     if (response == "passwordIncorrect") {
@@ -155,9 +156,6 @@ server.bind(
                 return next();
                 }
             );            
-        
-        res.end();
-        return next();
         }
     );
 
